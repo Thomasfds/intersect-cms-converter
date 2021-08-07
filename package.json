@@ -1,0 +1,48 @@
+{
+    "name": "intersect-cms-converter",
+    "version": "1.0.0",
+    "description": "Items converter for Intersect CMS",
+    "main": "main.js",
+    "author": "XFallSeane",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^13.1.8",
+        "electron-builder": "22.10.5"
+    },
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder build --win --publish",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder"
+    },
+    "dependencies": {
+        "electron-updater": "^4.3.9",
+        "electron-reload": "^2.0.0-alpha.1"
+    },
+    "build": {
+        "appId": "fr.intersect-cms-converter.thomasfdsapp",
+        "productName": "Intersect CMS Converter",
+        "copyright": "Copyright © 2021 Thomasfds Apps",
+        "icon": "build/ico.png",
+        "directories": {
+            "output": "release/"
+        },
+        "publish": [
+            {
+                "provider": "generic",
+                "url": "https://apps.thomasfds.fr/applications/intersect-converter/"
+            }
+        ],
+        "win": {
+            "target": "nsis",
+            "icon": "build/ico.png"
+        },
+        "linux": {
+            "icon": "build/ico.png"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        }
+    }
+}

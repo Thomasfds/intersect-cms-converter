@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="./assets/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+
+    <title>Intersect CMS Converter</title>
+</head>
+
+<body class="test">
+    <main class="container">
+        <nav class="panel border-rounded-0">
+            <p class="panel-heading border-rounded-0 has-text-centered is-uppercase">
+                Intersect CMS Converter
+            </p>
+            <div class="panel-block">
+                <p class="control has-icons-left has-text-centered">
+                     <input id="upload" type="file" multiple class="button is-primary is-outlined border-rounded-0 is-uppercase">
+                    </input>
+                    <button id="scan" class="button is-link is-outlined border-rounded-0 is-uppercase" disabled="true">
+                        Scan directory
+                    </button>
+                    <button id="convert" class="button is-link is-outlined  border-rounded-0 is-hidden is-uppercase">
+                        Convert
+                    </button>
+                    <button id="openFolder" class="button is-success border-rounded-0 is-uppercase is-hidden">
+                        Open convert folder
+                    </button>
+                    <button id="reset" class="button is-danger border-rounded-0 is-uppercase">
+                        Reset app
+                    </button>
+                </p>
+            </div>
+
+            <div id="list">
+                <a class="panel-block border-bottom border-rounded-0">
+                    No files
+                </a>
+            </div>
+        </nav>
+    </main>
+
+    <div id="notification" class="hidden">
+        <p id="message"></p>
+        <button id="close-button" onClick="closeNotification()">
+            Close
+        </button>
+        <button id="restart-button" onClick="restartApp()" class="hidden">
+            Restart
+        </button>
+    </div>
+
+</body>
+
+</html>
